@@ -39,5 +39,7 @@ app.post('/upload',upload.single('myFile') ,(req, res,next) => {
    
 })
 
-app.listen(port);
-console.log(`Server is up on port ${port}`);
+app.listen(port,()=>{
+    console.log(`Server is up on port ${port}`);
+
+});

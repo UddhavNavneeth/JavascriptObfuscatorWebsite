@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Obfuscate-Javascript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Obfuscate-Javascript</title>
 </head>
 <style>
     form {
@@ -15,18 +17,19 @@
     }
 
 </style>
-<body class="blue accent-2">
+<body class="light-blue">
 
     {{!-- just for style purposes --}}
     <nav>
-        <div class="nav-wrapper deep-purple darken-3">
+        <div class="nav-wrapper white">
         </div>
     </nav>
 
     <div class="container">
-        <h1>Javascipt Obfuscator</h1>
-        <h4>Upload your javascript file you want to obfuscate/uglify and it will automatically get downloaded in obfuscated form</br>WARNING uploading anything other than a .js file will temporarily crash the site</h4>
-        <h5>This has been created using the npm package "javascript-obfuscator". You can see an example of this at <a class="red-text accent-4" href="https://obfuscator.io/">https://obfuscator.io/</a></h5>
+        <h1>JS Obfuscator</h1>
+        <br>
+        <h6 font-family="Sans-serif">Upload your javascript file you want to obfuscate/uglify and it will automatically get downloaded in obfuscated form. WARNING uploading anything other than a .js file will temporarily crash the site</h6>
+        <h6 font-family="Sans-serif">This has been created using the npm package "javascript-obfuscator". You can see an example of this at <a class="red-text accent-4" href="https://obfuscator.io/">https://obfuscator.io/</a></h6>
 
 
         <form method="post" action="/upload" enctype='multipart/form-data'>
@@ -35,26 +38,29 @@
         </form>
     </div>
 
-    <footer class="page-footer deep-purple lighten-1">
+    <footer class="page-footer white lighten-1">
         <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Developed By</h5>
-                <p class="grey-text text-lighten-4">Uddhav Navneeth and Abhay R Patel</p>
+                <h5 class="black-text">Developed By</h5>
+                <p class="black-text text-lighten-4">Uddhav Navneeth and Abhay R Patel</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Our Links</h5>
+                <h5 class="black-text">Our Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3 ourLink" href="https://www.linkedin.com/in/uddhav-navneeth-143329152/">https://www.linkedin.com/in/uddhav-navneeth-143329152/</a></li>
-                  <li><a class="grey-text text-lighten-3 ourLink" href="https://github.com/UddhavNavneeth">https://github.com/UddhavNavneeth</a></li>
-                  <li><a class="grey-text text-lighten-3 ourLink" href="#!">Abhay's Linkedin</a></li>
-                  <li><a class="grey-text text-lighten-3 ourLink" href="#!">Abhay's Github</a></li>
+                  <li class="black-text">Abhay's Profile</li>
+                  <li><a class="fa fa-github" style="font-size:48px" href="https://github.com/abhayrpatel10"></a>nbsb
+                  <a class="fa fa-linkedin" style="font-size:48px" href="https://www.linkedin.com/in/abhayrpatel/"></a></li>
+                  
+                  <li class="black-text">Uddhav's Profile</li>
+                  <li><a class="fa fa-github" style="font-size:48px" href="https://github.com/UddhavNavneeth"></a>nbsb
+                  <a class="fa fa-linkedin" style="font-size:48px" href="https://www.linkedin.com/in/uddhav-navneeth-143329152/"></a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
+        <div class="footer-copyright black-text">
             <div class="container">
             © 2019 Wakandan Copyright
             </div>

@@ -1,13 +1,13 @@
-//Not in use
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 const JavaScriptObfuscator = require('javascript-obfuscator');
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 let app = express();
-let port = 2000;
+let port = process.env.PORT||3000
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -16,24 +16,30 @@ app.get('/', (req, res) => {
     res.render('home.hbs');
 })
 
-app.post('/upload', (req, res) => {
-    console.log(req.file);
-    fs.readFile(req.file.myFile.path, {encoding: 'utf-8'}, (err, data) => {
-        if (err) {
-            res.send(err);
+app.post('/upload',upload.single('myFile') ,(req, res,next) => {
+   
+    //console.log(req.file)
+    //console.log(__dirname)
+    console.log(req.file.originalname)
+    fs.readFile('uploads\\'+req.file.filename,'utf-8',function(err,data){
+        if(err){
+            return res.status(500).send(err)
         }
-        let obfuscationResult = JavaScriptObfuscator.obfuscate(data);
-        let obfuscatedCode = obfuscationResult.getObfuscatedCode();
-        let newPath = `${__dirname}/obfuscatedFiles/obfuscated_${req.files.myFile.name}`;
-        fs.writeFile(newPath, obfuscatedCode, function(err) {
-            if (err) {
-                return res.send(err);
+        const obfusctaionResult=JavaScriptObfuscator.obfuscate(data)
+        const uglyCode=obfusctaionResult.getObfuscatedCode()
+        fs.writeFile(req.file.originalname,uglyCode,function(err){
+            if(err){
+                return res.send(err)
             }
-            res.send('succesfully obfuscated and saved file');
+            res.download(path.join(__dirname,req.file.originalname))
         })
 
     })
+    
+   
 })
 
-app.listen(port);
-console.log(`Server is up on port ${port}`);
+app.listen(port,()=>{
+    console.log(`Server is up on port ${port}`);
+
+});
