@@ -1,0 +1,7 @@
+const axios = require('axios');
+
+axios.get('http://localhost:3000/searchFeedback/1/10/?project=techforce&model=chatbot&start=2019-05-30T08:44:59.947Z&end=2019-05-30').then(doc => {
+    console.log(doc);
+}).catch(e => {
+    console.log(e);
+});

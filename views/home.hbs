@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Obfuscate-Javascript</title>
 </head>
-<body>
-    <form method="post" action="/upload" enctype='multipart/form-data'>
-        <input type="file" name="myFile" id="file">
-        <input type="submit" value="upload">
-    </form>
+<style>
+    form {
+    margin-top: 70px;
+}
+</style>
+<body class="blue accent-2">
+
+    {{!-- just for style purposes --}}
+    <nav>
+        <div class="nav-wrapper deep-purple darken-3">
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Javascipt Obfuscator</h1>
+        <h4>Upload your javascript file you want to obfuscate/uglify and it will automatically get downloaded in obfuscated form</br>WARNING uploading anything other than a .js file will temporarily crash the site</h4>
+        <h5>This has been created using the npm package "javascript-obfuscator". You can see an example of this at <a class="red-text accent-4" href="https://obfuscator.io/">https://obfuscator.io/</a></h5>
+
+
+        <form method="post" action="/upload" enctype='multipart/form-data'>
+            <input class="btn-large" type="file" name="myFile" id="file">
+            <input class="waves-effect waves-light btn-large" type="submit" value="upload">
+        </form>
+    </div>
+
+    {{!-- <footer class="page-footer deep-purple lighten-1">
+    </footer> --}}
+    
 </body>
 </html>
