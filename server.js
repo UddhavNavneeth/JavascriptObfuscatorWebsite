@@ -25,7 +25,7 @@ app.post('/upload',upload.single('myFile') ,(req, res,next) => {
     }
    
     
-    fs.readFile('uploads\\'+req.file.filename,'utf-8',function(err,data){
+    fs.readFile("uploads"+"\\"+req.file.filename,'utf-8',function(err,data){
         if(err){
             return res.status(500).send(err)
         }
