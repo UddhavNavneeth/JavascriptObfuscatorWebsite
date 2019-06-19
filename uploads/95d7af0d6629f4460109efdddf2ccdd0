@@ -1,0 +1,17 @@
+{
+  "name": "video-downloader",
+  "version": "1.0.0",
+  "description": "A node js app to download videos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhay",
+  "license": "MIT",
+  "dependencies": {
+    "alert-node": "^1.2.5",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1",
+    "youtube-dl": "^2.0.0"
+  }
+}

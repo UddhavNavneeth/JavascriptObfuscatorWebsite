@@ -1,0 +1,31 @@
+var fs = require('fs');
+var youtubedl = require('youtube-dl');
+var video = youtubedl('https://www.youtube.com/watch?v=AXnqkVTFUqY&list=RDAXnqkVTFUqY&start_radio=1')
+ 
+
+const url='https://www.youtube.com/watch?v=AXnqkVTFUqY&list=RDAXnqkVTFUqY&start_radio=1'
+youtubedl.getInfo(url,(err,info)=>{
+  if(err){
+    return err
+  }
+  obj={
+    name:info.title,
+    filename:info._filename,
+    thumbnail:info.thumbnail,
+    desc:info.description,
+    formats:[],
+  }
+
+
+  for(var i=0;i<info.formats.length;i++){
+    data={
+      size:(info.formats[i].filesize)/1000000,
+      formatdesc:info.formats[i].format,
+      format_id:info.formats[i].format_id
+    }
+    obj.formats.push(data)
+
+  }
+
+  console.log(obj)
+})

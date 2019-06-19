@@ -17,10 +17,14 @@ app.get('/', (req, res) => {
 })
 
 app.post('/upload',upload.single('myFile') ,(req, res,next) => {
+    
+    const check=req.file.originalname.substr(req.file.originalname.length-3)
+    if(check!=='.js'){
+        return res.send('<script>alert("Please upload a .js File");location="https://js-obfuscation.herokuapp.com";</script> ')
+        
+    }
    
-    //console.log(req.file)
-    //console.log(__dirname)
-    console.log(req.file.originalname)
+    
     fs.readFile('uploads\\'+req.file.filename,'utf-8',function(err,data){
         if(err){
             return res.status(500).send(err)
