@@ -1,2 +1,0 @@
-import alert from 'alert-node'
-alert('hello')
